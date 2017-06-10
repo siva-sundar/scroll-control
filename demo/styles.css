@@ -13,7 +13,7 @@ section h1 {
 #section1 {
   background: #1EAAC1;
   background: -webkit-linear-gradient(to right, #DEE8CE, #1EAAC1);
-  background: linear-gradient(to right, #DEE8CE, #1EAAC1); 
+  background: linear-gradient(to right, #DEE8CE, #1EAAC1);
 }
 
 #section2 {
@@ -29,7 +29,7 @@ section h1 {
 }
 
 #section4 {
-  background: #F3904F;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #3B4371, #F3904F);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #F3904F;
+  background: -webkit-linear-gradient(to right, #3B4371, #F3904F);
+  background: linear-gradient(to right, #3B4371, #F3904F);
 }

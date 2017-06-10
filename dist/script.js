@@ -1,9 +1,22 @@
+// Pedro Gomes Smooth Scroll Control
+// 2017 © MIT License
+// https://github.com/gomesphoto/scroll-control
+//
+// Simple and easy-to-use jQuery ScrollControl for Viewport-sized sections
+// For more information consult the README.md file
+
+
+// Smooth Scroll jQuery Method
 var smoothScrollTo = function(where) {
 	$('html, body').animate({
-    scrollTop: $( where ).offset().top
+    scrollTop: $(where).offset().top
   }, 500);
 }
 
+
+// Maps sections height and distance from top
+// @param {Array} sections
+// @returns {Object} with methods nextSection and prevSection
 var ScrollControl = function(sections) {
 
 	var sortedSections = sections
@@ -62,25 +75,21 @@ var ScrollControl = function(sections) {
 
 $(document).ready(function() {
 
-	//Toggling Menu
-	$('.menu,.close,.navigation a').click(function(){
-		$('.navigation').toggleClass('navHidden');
-	});
-
-	//Smooth Scrolling
+	// Smooth Scrolling for anchor tags
 	$(document).on('click', 'a.smooth', function(event){
     event.preventDefault();
     smoothScrollTo($.attr(this, 'href'));
-
 	});
 
+  // Scroll Control sections
 	var scrollControl = ScrollControl([
-		'#Portfolio',
-		'#Welcome',
-		'#About',
-		'#Contact'
+		'#section1',
+		'#section2',
+		'#section3',
+		'#section4'
 	]);
 
+  // Backspace and up/down arrow keys
 	$(document).keydown(function(e) {
     if (e.which==38) {
     	e.preventDefault();
@@ -91,17 +100,6 @@ $(document).ready(function() {
     } else if (e.which==32) {
     	e.preventDefault();
     	scrollControl.nextSection();
-    }
-	});
-
-	//Keydown Carousel Slides
-	$(document).keydown( function(e) {
-    if( e.which==37) {
-    	e.preventDefault();
-      $('.left').trigger( "click" );
-    } else if(e.which==39) {
-    	e.preventDefault();
-      $('.right').trigger( "click" );
     }
 	});
 });
