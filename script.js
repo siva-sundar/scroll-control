@@ -4,6 +4,8 @@
 //
 // Simple and easy-to-use jQuery ScrollControl for Viewport-sized sections
 // For more information consult the README.md file
+//
+// REQUIRES JQUERY
 
 
 // Smooth Scroll jQuery Method
